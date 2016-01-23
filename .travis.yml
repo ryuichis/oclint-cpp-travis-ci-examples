@@ -12,6 +12,6 @@ script:
   - cd build
   - cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
   - cd ..
-  - cp compile_commands.json .
+  - cp build/compile_commands.json .
   - oclint-json-compilation-database
 
