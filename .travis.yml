@@ -8,9 +8,6 @@ matrix:
       osx_image: xcode7.3
     - os: osx
       osx_image: xcode8
-  allow_failures:
-    - os: osx
-      osx_image: xcode8
 before_install:
 - if [ $TRAVIS_OS_NAME == linux ]; then eval "$(curl -sL https://raw.githubusercontent.com/ryuichis/oclint-cpp-travis-ci-examples/master/oclint-ci-install.sh)"; fi
 script:
@@ -20,4 +17,3 @@ script:
   - cd ..
   - cp build/compile_commands.json .
   - oclint-json-compilation-database
-
