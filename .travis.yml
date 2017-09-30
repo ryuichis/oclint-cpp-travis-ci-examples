@@ -9,7 +9,10 @@ matrix:
     - os: osx
       osx_image: xcode9
 before_install:
-- if [ $TRAVIS_OS_NAME == linux ]; then eval "$(curl -sL https://raw.githubusercontent.com/ryuichis/oclint-cpp-travis-ci-examples/master/oclint-ci-install.sh)"; fi
+- if [ $TRAVIS_OS_NAME == linux ]; then
+    sudo apt-get install libstdc++6 -y;
+    eval "$(curl -sL https://raw.githubusercontent.com/ryuichis/oclint-cpp-travis-ci-examples/master/oclint-ci-install.sh)";
+  fi
 script:
   - mkdir build
   - cd build
